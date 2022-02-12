@@ -8,6 +8,6 @@ driver = webdriver.Chrome(
     chrome_options=options
     )
 
-path = "/Users/hellenruthes/dev/articles/ieee/"
+
 
 
