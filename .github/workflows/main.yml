@@ -18,8 +18,8 @@ jobs:
         with:
           python-version: 3.7
 
-      #- name: Install project dependencies
-        #run: make install
+      - name: Install project dependencies
+        run: make install
 
       #- name: Run security check
       #un: make check-sec
