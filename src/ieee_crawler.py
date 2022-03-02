@@ -2,19 +2,17 @@ import time
 import logging
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from settings import chrome_drive_path, university_name
+from settings import chrome_drive_path, university_name, cafe_url
 
 
-def _main():
+def _log_on_cafe():
 
-    driver = return_driver(chrome_drive_path=chrome_drive_path)
+    driver = return_driver(chrome_drive_path)
 
     sleeping_and_logging(3)
 
-    driver.get(
-        'https://www-periodicos-capes-gov-br.ezl.periodicos \
-        .capes.gov.br/index.php/acesso-cafe.html'  # nosec
-        )
+    driver.get(cafe_url)
+
     sleeping_and_logging(2)
 
     logging.warning(
@@ -36,12 +34,16 @@ def _main():
 
 
 def return_driver(chrome_drive_path):
-    options = webdriver.ChromeOptions()
-    driver = webdriver.Chrome(
-        executable_path=chrome_drive_path,
-        chrome_options=options
-        )
-    return driver
+    try:
+        print("Inside try")
+        options = webdriver.ChromeOptions()
+        driver = webdriver.Chrome(
+            executable_path=chrome_drive_path,
+            chrome_options=options
+            )
+        return driver
+    except Exception:
+        logging.error("Not able to get driver")
 
 
 def sleeping_and_logging(time_in_seconds):
@@ -49,4 +51,4 @@ def sleeping_and_logging(time_in_seconds):
     time.sleep(time_in_seconds)
 
 
-_main()
+_log_on_cafe()

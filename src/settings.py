@@ -4,3 +4,5 @@ ieee_url = 'https://ieeexplore-ieee-org.ez48.periodicos.capes.gov.br/search/ \
     ALL&returnType=SEARCH&matchPubs=true&ranges=2016_2022_Year'
 ieee_path = '/Users/hellenruthes/dev/articles/ieee/'
 university_name = "UTFPR - UNIVERSIDADE TECNOLOGICA FEDERAL DO PARANA"
+cafe_url = "https://www-periodicos-capes-gov-br.ezl." + \
+    "periodicos.capes.gov.br/index.php/acesso-cafe.html"
